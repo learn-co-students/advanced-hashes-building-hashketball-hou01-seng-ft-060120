@@ -118,27 +118,3 @@ def game_hash
   }
 }
 end
-
-def player_helper
-  game_hash[:home][:players].merge(game_hash[:away][:players])
-end
-
-def get_team_helper(team)
-  case team
-  when game_hash[:home][:team_name]
-    game_hash[:home]
-  when game_hash[:away][:team_name]
-    game_hash[:away]
-  end
-end
-
-def player_numbers(team)
-  get_team_helper(team)[:players].map do |key, value|
-    value[:number]
-  end
-end
-def names
-  game_hash[:home][players].map do |player|
-    player[:player_name]
-  end
-end
